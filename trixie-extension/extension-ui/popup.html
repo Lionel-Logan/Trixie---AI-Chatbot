@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { width: 300px; font-family: Arial, sans-serif; }
+        #chat-box { height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+        #user-input { width: 100%; padding: 5px; }
+        #send-btn { width: 100%; padding: 5px; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <div class="chat-container">
-        <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Ask something...">
-        <button id="send-btn">Send</button>
-    </div>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type a message...">
+    <button id="send-btn">Send</button>
     <script src="popup.js"></script>
 </body>
 </html>
-
