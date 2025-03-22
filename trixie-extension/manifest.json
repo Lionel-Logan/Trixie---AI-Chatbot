@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Chatbot Extension",
+  "version": "1.0",
+  "description": "A chatbot for coding insights.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://leetcode.com/*"],
+  "action": {
+    "default_popup": "extension-ui/popup.html",
+    "default_icon": {
+      "16": "extension-ui/assets/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content-scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
+  
