@@ -25,7 +25,8 @@ const Landing = () => {
               <a href="#">Blog</a>
             </div>
             <div className="nav-buttons">
-              <button className="btn btn-outline">Log In</button><button className="btn btn-primary" onClick={() => window.location.href = '/signup'}>Sign Up</button>
+              <button className="btn btn-outline">Log In</button>
+              <button className="btn btn-primary" onClick={() => window.location.href = '/signup'}>Sign Up</button>
               
             </div>
           </nav>
@@ -45,7 +46,7 @@ const Landing = () => {
             </div>
             <div className="hero-image">
               <br></br>
-              <img src="..\public\lap_image.webp" alt="Trixie platform interface showing code assistance" />
+              <img src="/image.png" alt="Trixie platform interface showing code assistance" />
             </div>
           </div>
         </section>
