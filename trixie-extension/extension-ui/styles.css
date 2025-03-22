@@ -10,18 +10,18 @@
 body {
     width: 350px;
     height: 500px;
-    background: black; /* Main background */
+    background: black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Main Chat Container */
+/* Chat Container */
 .chat-container {
     width: 90%;
     height: 90%;
-    background: rgba(255, 255, 255, 0.1); /* Dark grey container */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 15px;
     border-radius: 20px;
@@ -32,25 +32,47 @@ body {
     position: relative;
 }
 
-/* Grey Chat Box */
+/* Trixie Button (Top-Right) */
+.trixie-btn {
+    position: absolute;
+    top: -40px; /* Move button above the chat container */
+    right: 15px;
+    background: #01b230;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+.trixie-btn:hover {
+    background: white;
+}
+
+
+/* Chat Box */
 .chat-box {
     flex-grow: 1;
-    background: rgba(255, 255, 255, 0.15); /* Slightly lighter grey */
-    border-radius: 20px 20px 0 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
     padding: 12px;
     overflow-y: auto;
+    max-height: 400px;
 }
 
 /* Input & Send Button */
 .input-container {
     display: flex;
-    gap: 10px; /* Reduced gap between input and button */
+    gap: 8px;
     align-items: center;
     padding: 8px;
-    margin-top: 8px;
-    margin-left: -5px; /* Moves everything slightly to the left */
+    margin-top: 5px;
 }
 
+/* Input Field */
 input {
     flex: 1;
     font-size: 14px;
@@ -60,13 +82,12 @@ input {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     outline: none;
-    padding-right: 5px; /* Reduce right padding */
 }
 
 /* Send Button */
-button {
+#send-btn {
     font-size: 14px;
-    padding: 10px 16px; /* Slightly smaller to fit better */
+    padding: 10px 16px;
     background: #01b230;
     border: none;
     border-radius: 20px;
@@ -74,94 +95,60 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: -5px; /* Moves button slightly to the left */
 }
 
-button:hover {
+#send-btn:hover {
     background: white;
 }
 
-/* Scrollbar Styling */
-.chat-box::-webkit-scrollbar {
-    width: 4px;
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-}
-
-/* Chat Box Messages */
+/* Chat Messages */
 .message {
     display: flex;
     align-items: center;
     margin: 4px 0;
 }
 
-/* User Messages (Left Side) */
-.user-message {
-    justify-content: flex-start;
-}
-
+/* User Messages */
 .user-message p {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 6px 10px;
     border-radius: 12px;
-    max-width: 70%;
+    max-width: 75%;
 }
 
-/* Bot Messages (Right Side) */
-.bot-message {
-    justify-content: flex-end;
-}
-
+/* Bot Messages */
 .bot-message p {
-    background:#01b230;
+    background: #01b230;
     color: black;
     padding: 6px 10px;
     border-radius: 12px;
-    max-width: 70%;
+    max-width: 75%;
 }
 
+/* Typing Indicator */
 .typing-indicator {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 4px;
-    width: 8px;
-    height: 8px;
+    padding: 6px;
 }
 
 .typing-indicator span {
     width: 6px;
     height: 6px;
-    margin: 0 2px;
-    background-color:  #01b230;
+    margin: 0 3px;
+    background-color: #01b230;
     border-radius: 50%;
     display: inline-block;
     animation: typingWave 1.5s infinite ease-in-out;
 }
 
-.typing-indicator span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-}
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes typingWave {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-    50% {
-        transform: scale(1.4);
-        opacity: 1;
-    }
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.5); opacity: 1; }
 }

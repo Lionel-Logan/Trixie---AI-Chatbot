@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInput = document.getElementById("user-input");
     const sendBtn = document.getElementById("send-btn");
     const scrollBtn = document.getElementById("scroll-down");
+    const trixieBtn = document.getElementById("trixie-btn"); // New button
 
-    function addMessage(sender, text, isUser) {
+    function addMessage(text, isUser) {
         const messageElement = document.createElement("div");
-        messageElement.classList.add("message");
-        messageElement.classList.add(isUser ? "user-message" : "bot-message");
+        messageElement.classList.add("message", isUser ? "user-message" : "bot-message");
 
         const messageText = document.createElement("p");
-        messageText.innerHTML = text;
+        messageText.textContent = text;
         messageText.style.opacity = "0"; // Start invisible
         messageText.style.transition = "opacity 0.5s ease-in-out";
 
@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return typingElement;
     }
 
-    sendBtn.addEventListener("click", async function () {
+    async function sendMessage() {
         const message = userInput.value.trim();
         if (!message) return;
 
-        addMessage("You", message, true);
+        addMessage(message, true);
         userInput.value = "";
 
         const typingIndicator = showTypingIndicator(); // Show typing dots
@@ -53,10 +53,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
 
             chatBox.removeChild(typingIndicator); // Remove typing dots
-            addMessage("Bot", data.response, false);
+            addMessage(data.response, false);
         } catch (error) {
             chatBox.removeChild(typingIndicator); // Remove typing dots
-            addMessage("Bot", "Error connecting to chatbot.", false);
+            addMessage("Error connecting to chatbot.", false);
+        }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+
+    // Listen for Enter key to send message
+    userInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent line break in input field
+            sendMessage();
         }
     });
 
@@ -66,5 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
             top: chatBox.scrollHeight,
             behavior: "smooth",
         });
+    });
+
+    // Open Trixie webpage
+    trixieBtn.addEventListener("click", function () {
+        window.open("https://your-trixie-webpage.com", "_blank"); // Update URL
     });
 });
