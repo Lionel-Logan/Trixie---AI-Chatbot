@@ -1,0 +1,12 @@
+{
+    "name": "trixie-chatbot",
+    "version": "1.0.0",
+    "description": "Chatbot backend for Trixie extension",
+    "main": "server.js",
+    "dependencies": {
+        "@google/generative-ai": "^0.24.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.18.2"
+    }
+}
