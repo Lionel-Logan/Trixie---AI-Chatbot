@@ -1,26 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Chatbot Extension",
+  "name": "Trixie Chatbot",
   "version": "1.0",
-  "description": "A chatbot for coding insights.",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["https://leetcode.com/*"],
-  "action": {
-    "default_popup": "extension-ui/popup.html",
-    "default_icon": {
-      "16": "extension-ui/assets/icon.png"
-    }
-  },
+  "description": "A chatbot assistant for coding platforms",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["http://localhost:5000/*"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://leetcode.com/*"],
-      "js": ["content-scripts/content.js"],
-      "run_at": "document_idle"
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/content.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "extension-ui/popup.html",
+    "default_icon": {
+      "16": "extension-ui/assets/icon.png",
+      "48": "extension-ui/assets/icon.png",
+      "128": "extension-ui/assets/icon.png"
+    }
+  }
 }
-
-  
