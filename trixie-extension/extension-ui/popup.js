@@ -3,7 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInput = document.getElementById("user-input");
     const sendBtn = document.getElementById("send-btn");
     const scrollBtn = document.getElementById("scroll-down");
-    const trixieBtn = document.getElementById("trixie-btn"); 
+    const trixieBtn = document.getElementById("trixie-btn");
+
+    let problemTitle = "Unknown Problem"; // Default if no title received
+
+    // Receive problem title from content.js
+    chrome.runtime.onMessage.addListener((message) => {
+        if (message.type === "problemTitle") {
+            console.log("📩 Received problem title:", message.title);
+            problemTitle = message.title;
+        }
+    });
 
     function addMessage(text, isUser) {
         const messageElement = document.createElement("div");
@@ -11,14 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const messageText = document.createElement("p");
         messageText.textContent = text;
-        messageText.style.opacity = "0"; // Start invisible
+        messageText.style.opacity = "0"; 
         messageText.style.transition = "opacity 0.5s ease-in-out";
 
         messageElement.appendChild(messageText);
         chatBox.appendChild(messageElement);
 
         setTimeout(() => {
-            messageText.style.opacity = "1"; // Fade-in effect
+            messageText.style.opacity = "1"; 
         }, 50);
 
         chatBox.scrollTop = chatBox.scrollHeight;
@@ -41,44 +51,42 @@ document.addEventListener("DOMContentLoaded", function () {
         addMessage(message, true);
         userInput.value = "";
 
-        const typingIndicator = showTypingIndicator(); // Show typing dots
+        const typingIndicator = showTypingIndicator(); 
 
         try {
+            console.log("📤 Sending to chatbot:", { message, problemTitle });
+
             const response = await fetch("http://localhost:5000/chatbot", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message }),
+                body: JSON.stringify({ message, problemTitle }), 
             });
 
             const data = await response.json();
+            console.log("🤖 Chatbot Response:", data);
 
-            chatBox.removeChild(typingIndicator); // Remove typing dots
+            chatBox.removeChild(typingIndicator); 
             addMessage(data.response, false);
         } catch (error) {
-            chatBox.removeChild(typingIndicator); // Remove typing dots
+            console.error("❌ Chatbot connection error:", error);
+            chatBox.removeChild(typingIndicator); 
             addMessage("Error connecting to chatbot.", false);
         }
     }
 
     sendBtn.addEventListener("click", sendMessage);
 
-    // Listen for Enter key to send message
     userInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Prevent line break in input field
+            event.preventDefault(); 
             sendMessage();
         }
     });
 
-    // Smooth scroll down
     scrollBtn.addEventListener("click", function () {
-        chatBox.scrollTo({
-            top: chatBox.scrollHeight,
-            behavior: "smooth",
-        });
+        chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: "smooth" });
     });
 
-    // Open Trixie webpage
     trixieBtn.addEventListener("click", function () {
         console.log("Trixie button clicked, sending message to background...");
         chrome.runtime.sendMessage({ action: "openTab" }, (response) => {

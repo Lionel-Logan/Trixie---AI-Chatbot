@@ -4,13 +4,13 @@
   "version": "1.0",
   "description": "A chatbot assistant for coding platforms",
   "permissions": ["activeTab", "storage", "scripting", "tabs"],
-  "host_permissions": ["http://localhost:5000/*", "http://localhost:3000/*"],
+  "host_permissions": ["http://localhost:5000/*"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://leetcode.com/problems/*"],
       "js": ["content-scripts/content.js"]
     }
   ],
