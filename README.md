@@ -48,7 +48,6 @@ Trixie is an AI-powered Chrome extension and platform designed to enhance your c
 - **Database**: Supabase
 - **AI**: Custom-trained AI using Gemini API
 - **Charting**: Recharts.js
-<!-- - **PDF Generation**: jsPDF -->
 - **Browser Extension**: Chrome Extension APIs
 
 ## 🛠️ Installation Guide
