@@ -6,6 +6,11 @@ cat <<EOF > README.md
 # Trixie - AI-Powered Coding Assistant
 
 Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.
+# Problem Statement
+India produces over 1.5 million engineering graduates each year, but 75-80% of them struggle to find jobs in the IT sector due to a lack of skills in Data Structures and Algorithms (DSA) and aptitude. Despite holding degrees, only 3.84% of graduates have the technical skills required for software roles, while over 60% fail campus recruitment aptitude tests. Since 94% of hiring managers prioritize DSA proficiency in technical interviews, graduates without these skills face limited job opportunities, often settling for low-paying, non-technical roles or experiencing slow career growth.
+
+# Our Solution
+To address this issue, we offer Trixie, an interactive learning solution designed to enhance DSA and aptitude skills. Trixie functions as a Chrome extension chatbot, providing real-time, interactive learning support. Additionally, our website tracks students' problem-solving progress, highlighting their strengths and weaknesses. It offers real-time data insights and generates a comprehensive academic review, helping students identify areas for improvement and boosting their overall employability.
 
 ## 🚀 Features Implemented
 
