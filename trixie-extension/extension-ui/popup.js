@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInput = document.getElementById("user-input");
     const sendBtn = document.getElementById("send-btn");
     const scrollBtn = document.getElementById("scroll-down");
-    const trixieBtn = document.getElementById("trixie-btn"); // New button
+    const trixieBtn = document.getElementById("trixie-btn"); 
 
     function addMessage(text, isUser) {
         const messageElement = document.createElement("div");
@@ -80,6 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Open Trixie webpage
     trixieBtn.addEventListener("click", function () {
-        window.open("https://your-trixie-webpage.com", "_blank"); // Update URL
+        console.log("Trixie button clicked, sending message to background...");
+        chrome.runtime.sendMessage({ action: "openTab" }, (response) => {
+            if (chrome.runtime.lastError) {
+                console.error("Runtime error:", chrome.runtime.lastError);
+            } else {
+                console.log("Response from background:", response);
+            }
+        });
     });
 });

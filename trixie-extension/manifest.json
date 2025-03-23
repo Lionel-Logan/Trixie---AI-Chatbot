@@ -3,8 +3,8 @@
   "name": "Trixie Chatbot",
   "version": "1.0",
   "description": "A chatbot assistant for coding platforms",
-  "permissions": ["activeTab", "storage", "scripting"],
-  "host_permissions": ["http://localhost:5000/*"],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "host_permissions": ["http://localhost:5000/*", "http://localhost:3000/*"],
   "background": {
     "service_worker": "background.js"
   },
