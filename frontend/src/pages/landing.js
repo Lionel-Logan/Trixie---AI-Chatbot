@@ -3,7 +3,6 @@ import './landing.css';
 
 const Landing = () => {
     
-
   return (
     <div className="landing-page">
       <header className="header">
@@ -21,8 +20,8 @@ const Landing = () => {
               <a href="#">Home</a>
               <a href="#why-choose-trixie">Features</a>
               <a href="#pricing">Pricing</a>
-              <a href="#">For Educators</a>
-              <a href="#">Blog</a>
+              {/* <a href="#">For Educators</a>
+              <a href="#">Blog</a> */}
             </div>
             <div className="nav-buttons">
               <button className="btn btn-outline" onClick={() => window.location.href = '/dash'}>Log In</button>
@@ -35,24 +34,31 @@ const Landing = () => {
 
       <main>
         <section className="hero">
-          <div className="container">
+          <div className="container hero-container">
             <div className="hero-content">
               <h1>Become a <span>Better Programmer</span> with AI-Powered Guidance</h1>
-              <p>Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.</p>
+              <p>Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.Trixie transforms how programmers practice and improve their coding skills. Our intelligent platform analyzes your coding patterns, provides personalized feedback, and guides you through challenging problems step-by-step. Whether you're preparing for technical interviews or enhancing your competitive programming skills, Trixie adapts to your learning pace, highlights improvement areas, and celebrates your progress—making the journey to coding excellence both effective and enjoyable</p>
               <div className="nav-buttons">
                 <button className="btn btn-primary">Install Chrome Extension</button>
-                <button className="btn btn-outline">Learn More</button>
+                <button className="btn btn-outline" onClick={() => window.location.href = '#why-choose-trixie'}>Learn More</button>
+              </div>
+              
+              {/* Overview Section */}
+              <div className="overview-section">
+                <br></br>
+              <div className="hero-image">
+              {/*<img src="/image.png" alt="Trixie platform interface showing code assistance" />*/}
+            </div>
+                
+                <p></p>
               </div>
             </div>
-            <div className="hero-image">
-              <br></br>
-              <img src="/image.png" alt="Trixie platform interface showing code assistance" />
-            </div>
+            
           </div>
         </section>
 
         <div className="container">
-          <div className="stats">
+          {/* <div className="stats">
             <div className="stat-item">
               <h2>15K+</h2>
               <p>Active Users</p>
@@ -65,7 +71,7 @@ const Landing = () => {
               <h2>500+</h2>
               <p>Educational Partners</p>
             </div>
-          </div>
+          </div> */}
 
           <section className="features" id="why-choose-trixie" >
             <div className="section-title">
@@ -102,7 +108,7 @@ const Landing = () => {
             </div>
           </section>
 
-          <section className="testimonials">
+          {/* <section className="testimonials">
             <div className="section-title">
               <h2>Success Stories</h2>
               <p>Hear from users who improved their coding skills and landed their dream jobs with Trixie</p>
@@ -134,7 +140,7 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className="cta" id="pricing">
             <h2>Ready to Transform Your Coding Journey?</h2>
