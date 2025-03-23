@@ -19,8 +19,9 @@ body {
 
 /* Chat Container */
 .chat-container {
+    
     width: 90%;
-    height: 90%;
+    height: 95%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 15px;
@@ -32,36 +33,48 @@ body {
     position: relative;
 }
 
+
+
+/* Ensure messages are spaced out properly */
+.message:first-child {
+    margin-top: 20px; /* Push the first message lower */
+}
+
 /* Trixie Button (Top-Right) */
 .trixie-btn {
-    position: absolute;
-    top: -40px; /* Move button above the chat container */
-    right: 15px;
+    margin-top: 10px;
+    margin-right: 15px;
+    width: 30px;  /* Smaller width */
+    height: 30px; /* Smaller height */
+    position: fixed;
+    top: 10px;
+    right: 10px;
     background: #01b230;
     color: black;
     font-weight: bold;
     border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
+    border-radius: 50%; /* Makes it a perfect circle */
     cursor: pointer;
     transition: 0.3s;
-    z-index: 100; /* Ensure it's above other elements */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Adjust text size */
+    text-align: center;
+    line-height: 40px; /* Center text vertically */
 }
+
+
+
 
 .trixie-btn:hover {
     background: white;
 }
 
 
-/* Chat Box */
-.chat-box {
-    flex-grow: 1;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    padding: 12px;
-    overflow-y: auto;
-    max-height: 400px;
-}
+
+
 
 /* Input & Send Button */
 .input-container {
@@ -106,9 +119,14 @@ input {
     display: flex;
     align-items: center;
     margin: 4px 0;
+    width: 100%;
 }
 
-/* User Messages */
+/* User Messages (Align Left) */
+.user-message {
+    justify-content: flex-start;
+}
+
 .user-message p {
     background: rgba(255, 255, 255, 0.2);
     color: white;
@@ -117,7 +135,12 @@ input {
     max-width: 75%;
 }
 
-/* Bot Messages */
+/* Bot Messages (Align Right) */
+.bot-message {
+    justify-content: flex-end;
+    text-align: right;
+}
+
 .bot-message p {
     background: #01b230;
     color: black;
@@ -125,6 +148,8 @@ input {
     border-radius: 12px;
     max-width: 75%;
 }
+
+
 
 /* Typing Indicator */
 .typing-indicator {
@@ -143,6 +168,8 @@ input {
     display: inline-block;
     animation: typingWave 1.5s infinite ease-in-out;
 }
+
+
 
 .typing-indicator span:nth-child(1) { animation-delay: 0s; }
 .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
