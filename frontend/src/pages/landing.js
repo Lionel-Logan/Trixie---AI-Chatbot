@@ -25,8 +25,8 @@ const Landing = () => {
               <a href="#">Blog</a>
             </div>
             <div className="nav-buttons">
-              <button className="btn btn-outline">Log In</button>
-              <button className="btn btn-primary" onClick={() => window.location.href = '/signup'}>Sign Up</button>
+              <button className="btn btn-outline" onClick={() => window.location.href = '/dash'}>Log In</button>
+              <button className="btn btn-primary" onClick={() => window.location.href = '/signup'}>Admin Log In</button>
               
             </div>
           </nav>
@@ -75,21 +75,26 @@ const Landing = () => {
 
             <div className="feature-cards">
               <div className="feature-card">
-                <div className="feature-icon"></div>
+                <div className="feature-icon">
+                <img src="ai.ico" alt="icon" />
+                </div>
                 <h3>AI-Powered Chatbot</h3>
                 <p>Get personalized hints, explanations, and feedback for coding problems in real-time from our intelligent AI assistant.</p>
               </div>
               <div className="feature-card">
+              <img src="analysis.ico" alt="icon" />
                 <div className="feature-icon"></div>
                 <h3>Real-Time Analytics</h3>
                 <p>Track programming language usage, problem difficulty, completion time, and solution efficiency metrics.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">⏱</div>
+              <img src="timer.ico" alt="icon" />
+                <div className="feature-icon"></div>
                 <h3>Custom Timers</h3>
                 <p>Improve your time management by setting personalized time limits for problem-solving just like in real interviews.</p>
               </div>
               <div className="feature-card">
+              <img src="gamification.ico" alt="icon" />
                 <div className="feature-icon"></div>
                 <h3>Gamification</h3>
                 <p>Stay motivated with achievements, daily streaks, and competitive leaderboards that make learning fun.</p>
