@@ -13,7 +13,8 @@ const GoogleIcon = () => (
 
 const Signup = () => {
   const navigate = useNavigate();
-  
+
+  // Trixie color palette
   const colors = {
     primary: '#6366F1', // Indigo
     secondary: '#F97316', // Orange
@@ -22,15 +23,29 @@ const Signup = () => {
     lightGray: '#E5E7EB',
     white: '#FFFFFF'
   };
-  
-  const handleGoogleSignup = (isAdmin = false) => {
-    console.log('Signing up with Google', isAdmin ? 'as admin' : 'as regular user');    
+
+  // 🛠️ Handle Google Sign-in Flow
+  const handleGoogleSignup = async (isAdmin = false) => {
+    try {
+      const response = await fetch("http://localhost:5000/auth/google");  // Fetch OAuth URL
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch Google Auth URL");
+      }
+
+      const { url } = await response.json();  // Extract URL from response
+      window.location.href = url;  // Redirect to Google OAuth
+    } catch (error) {
+      console.error("Google Signup Error:", error);
+      alert("Failed to initiate Google authentication.");
+    }
   };
-  
+
   const handleForgotPassword = () => {
     console.log('Forgot password functionality');
+    navigate('/reset-password');
   };
-  
+
   return (
     <div 
       style={{ 
