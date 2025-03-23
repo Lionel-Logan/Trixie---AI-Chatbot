@@ -69,6 +69,14 @@ Trixie is an AI-powered Chrome extension and platform designed to enhance your c
    ```bash
    npm start
    ```
+
+5. Navigate to the chatbot:
+   ```bash
+   cd ..
+   cd trixie-extension/backend-chatbot
+   node server.js
+   ```
+   
 5. For the Chrome extension:
    - Navigate to `chrome://extensions/`
    - Enable **Developer Mode**
@@ -81,13 +89,3 @@ For further queries, feel free to reach out.
 ---
 
 **Trixie - Empowering Coders with AI.**
-EOF
-
-# Add the README to Git
-git add README.md
-
-# Commit the README.md
-git commit -m "Add README.md for Trixie project"
-
-# Push to the remote repository
-git push origin master
