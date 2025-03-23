@@ -14,7 +14,6 @@ const GoogleIcon = () => (
 const Signup = () => {
   const navigate = useNavigate();
   
-  // Trixie color palette
   const colors = {
     primary: '#6366F1', // Indigo
     secondary: '#F97316', // Orange
@@ -25,16 +24,11 @@ const Signup = () => {
   };
   
   const handleGoogleSignup = (isAdmin = false) => {
-    // Implement Google signup logic here
-    console.log('Signing up with Google', isAdmin ? 'as admin' : 'as regular user');
-    // After successful signup, redirect to appropriate page
-    // navigate(isAdmin ? '/admin/dashboard' : '/dashboard');
+    console.log('Signing up with Google', isAdmin ? 'as admin' : 'as regular user');    
   };
   
   const handleForgotPassword = () => {
-    // Implement forgot password logic here
     console.log('Forgot password functionality');
-    // navigate('/reset-password');
   };
   
   return (

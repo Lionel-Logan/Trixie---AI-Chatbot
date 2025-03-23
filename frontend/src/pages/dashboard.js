@@ -3,28 +3,29 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 import './dashboard.css';
 
 const Dashboard = () => {
-  // Dummy dataset - in a real app, you would fetch this from an API
+  // Dummy dataset - in a real app,fetch this from an API
   const [questionData, setQuestionData] = useState([
     { name: 'Easy', value: 15, color: '#4CAF50' },  // Green for easy
     { name: 'Medium', value: 8, color: '#FFC107' }, // Yellow for medium
     { name: 'Hard', value: 3, color: '#F44336' }    // Red for hard
   ]);
 
-  // Total questions solved
+
   const totalQuestions = questionData.reduce((sum, item) => sum + item.value, 0);
 
-  const strengthsData = [
-    { topic: 'LinkedList', level: 90, color: '#4CAF50' },
-    { topic: 'C', level: 85, color: '#2196F3' },
-    { topic: 'Graphs', level: 78, color: '#FF9800' },
-    { topic: 'Trees', level: 75, color: '#9C27B0' }
-  ];
+  const [strengthsData, setStrengthsData] = useState([
+    { topic: 'LinkedList', level: 90, color: '#00E676' },
+    { topic: 'C', level: 85, color: '#00E676' },
+    { topic: 'Graphs', level: 78, color: '#00E676' },
+    { topic: 'Trees', level: 75, color: '#00E676' }
+  ]);
   
-  const weaknessesData = [
-    { topic: 'Python', level: 40, color: '#E91E63' },
-    { topic: 'Dynamic Programming', level: 35, color: '#F44336' },
-    { topic: 'Bit Manipulation', level: 30, color: '#795548' }
-  ];
+  
+  const [weaknessesData, setWeaknessesData] = useState([
+    { topic: 'Python', level: 40, color: '#00E676' },
+    { topic: 'Dynamic Programming', level: 35, color: '#00E676' },
+    { topic: 'Bit Manipulation', level: 30, color: '#00E676' }
+  ]);
 
   // Custom renderer for the pie chart labels
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -47,7 +48,7 @@ const Dashboard = () => {
     );
   };
 
-  // Function to toggle between demo data and empty data (for testing)
+  // Function to toggle between demo data and empty data 
   const toggleData = () => {
     if (totalQuestions > 0) {
       // Set to empty data
@@ -56,6 +57,8 @@ const Dashboard = () => {
         { name: 'Medium', value: 0, color: '#FFC107' },
         { name: 'Hard', value: 0, color: '#F44336' }
       ]);
+      setStrengthsData([]);
+      setWeaknessesData([]);
     } else {
       // Set to demo data
       setQuestionData([
@@ -63,6 +66,20 @@ const Dashboard = () => {
         { name: 'Medium', value: 8, color: '#FFC107' },
         { name: 'Hard', value: 3, color: '#F44336' }
       ]);
+      setStrengthsData([
+        { topic: 'LinkedList', level: 90, color: '#00E676' },
+        { topic: 'C', level: 85, color: '#00E676' },
+        { topic: 'Graphs', level: 78, color: '#00E676' },
+        { topic: 'Trees', level: 75, color: '#00E676' }
+      ]);
+      
+      // Restore weaknesses data
+      setWeaknessesData([
+        { topic: 'Python', level: 40, color: '#00E676' },
+        { topic: 'Dynamic Programming', level: 35, color: '#00E676' },
+        { topic: 'Bit Manipulation', level: 30, color: '#00E676' }
+      ]);
+
     }
   };
   const renderSkillBars = (data, title) => {
