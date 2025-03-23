@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Navigate to your project directory
+cd /path/to/your/project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Create the README.md file with the detailed content using a heredoc
+cat <<EOF > README.md
+# Trixie - AI-Powered Coding Assistant
 
-## Available Scripts
+Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.
 
-In the project directory, you can run:
+## 🚀 Features Implemented
 
-### `npm start`
+- **Landing Page**:
+  - Install Chrome Extension button
+  - Login button redirects to the dashboard
+  - Admin Login button (to be implemented later)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dashboard**:
+  - Displays a **Pie Chart** representing the number of questions solved and their difficulty levels (Easy, Medium, Hard)
+  - Provides personalized insights into your **Strengths and Weaknesses** in various skill areas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Data Management**:
+  - Data is stored and managed using **Supabase**
+  - Real-time coding data is extracted from coding platforms like **LeetCode**
 
-### `npm test`
+- **AI Chatbot**:
+  - Available as a **Chrome Extension** that works in the background while you're on coding platforms
+  - Trained to analyze problem complexity and generate helpful responses
+  - Provides actionable insights, explanations, and coding tips
+  - Enables interactive learning with follow-up questions based on your progress
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Admin Dashboard (Upcoming)**:
+  - Admin login for mentors and teachers
+  - Track student progress and analyze their strengths and weaknesses
+  - Generate reports based on real-time data
 
-### `npm run build`
+## 🧑‍💻 How It Works
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Install the Chrome Extension**: Access it directly from the landing page.
+2. **Log In**: Choose to log in as a user or an admin (admin login functionality will be implemented later).
+3. **Dashboard Overview**: Visualize coding progress through insightful charts and data fetched from Supabase.
+4. **Engage with the Chatbot**: Converse with the AI chatbot while solving problems on platforms like LeetCode.
+5. **Track Progress**: Analyze strengths and weaknesses and receive AI-generated suggestions for improvement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: Supabase
+- **AI**: Custom-trained AI using Gemini API
+- **Charting**: Recharts.js
+<!-- - **PDF Generation**: jsPDF -->
+- **Browser Extension**: Chrome Extension APIs
 
-### `npm run eject`
+## 🛠️ Installation Guide
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/trixie.git
+   ```
+2. Navigate to the frontend:
+   ```bash
+   cd frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the application:
+   ```bash
+   npm start
+   ```
+5. For the Chrome extension:
+   - Navigate to `chrome://extensions/`
+   - Enable **Developer Mode**
+   - Load the unpacked extension from the `extension` folder.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📧 Contact
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For further queries, feel free to reach out.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+**Trixie - Empowering Coders with AI.**
+EOF
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Add the README to Git
+git add README.md
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Commit the README.md
+git commit -m "Add README.md for Trixie project"
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Push to the remote repository
+git push origin master
