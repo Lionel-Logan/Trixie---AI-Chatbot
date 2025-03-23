@@ -14,17 +14,16 @@ const Dashboard = () => {
   const totalQuestions = questionData.reduce((sum, item) => sum + item.value, 0);
 
   const [strengthsData, setStrengthsData] = useState([
-    { topic: 'LinkedList', level: 90, color: '#00E676' },
-    { topic: 'C', level: 85, color: '#00E676' },
-    { topic: 'Graphs', level: 78, color: '#00E676' },
-    { topic: 'Trees', level: 75, color: '#00E676' }
+    { topic: 'LinkedList', level: 90, color: '#6366f1' },
+    { topic: 'C', level: 85, color: '#F44336' },
+    { topic: 'Graphs', level: 78, color: '#FFBB28' },
+    { topic: 'Trees', level: 75, color: '#00C49F' }
   ]);
   
-  
   const [weaknessesData, setWeaknessesData] = useState([
-    { topic: 'Python', level: 40, color: '#00E676' },
+    { topic: 'Python', level: 40, color: '#FF8042' },
     { topic: 'Dynamic Programming', level: 35, color: '#00E676' },
-    { topic: 'Bit Manipulation', level: 30, color: '#00E676' }
+    { topic: 'Bit Manipulation', level: 30, color: '#FFC107' }
   ]);
 
   // Custom renderer for the pie chart labels
@@ -67,17 +66,17 @@ const Dashboard = () => {
         { name: 'Hard', value: 3, color: '#F44336' }
       ]);
       setStrengthsData([
-        { topic: 'LinkedList', level: 90, color: '#00E676' },
-        { topic: 'C', level: 85, color: '#00E676' },
-        { topic: 'Graphs', level: 78, color: '#00E676' },
-        { topic: 'Trees', level: 75, color: '#00E676' }
+        { topic: 'LinkedList', level: 90, color: '#6366f1' },
+        { topic: 'C', level: 85, color: '#F44336' },
+        { topic: 'Graphs', level: 78, color: '#FFBB28' },
+        { topic: 'Trees', level: 75, color: '#FF8042' } 
       ]);
       
       // Restore weaknesses data
       setWeaknessesData([
-        { topic: 'Python', level: 40, color: '#00E676' },
+        { topic: 'Python', level: 40, color: '#00C49F' },
         { topic: 'Dynamic Programming', level: 35, color: '#00E676' },
-        { topic: 'Bit Manipulation', level: 30, color: '#00E676' }
+        { topic: 'Bit Manipulation', level: 30, color: '#FFC107' }
       ]);
 
     }
