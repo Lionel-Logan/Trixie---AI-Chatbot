@@ -1,8 +1,6 @@
 # Navigate to your project directory
 cd /path/to/your/project
 
-# Create the README.md file with the detailed content using a heredoc
-cat <<EOF > README.md
 # Trixie - AI-Powered Coding Assistant
 
 Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.
