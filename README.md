@@ -1,93 +1,289 @@
-# Navigate to your project directory
-cd /path/to/your/project
+# Trixie - AI-Powered Coding Assistant 🤖
 
-# Trixie - AI-Powered Coding Assistant
+[![TinkHack 2.0](https://img.shields.io/badge/TinkHack-2.0-blue.svg)](https://github.com/Lionel-Logan/Trixie---AI-Chatbot)
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-green.svg)](https://chrome.google.com/webstore)
+[![Node.js](https://img.shields.io/badge/Node.js-Backend-brightgreen.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-Frontend-blue.svg)](https://reactjs.org/)
 
-Trixie is an AI-powered Chrome extension and platform designed to enhance your coding skills through real-time guidance, performance tracking, and gamification.
-# Problem Statement
-India produces over 1.5 million engineering graduates each year, but 75-80% of them struggle to find jobs in the IT sector due to a lack of skills in Data Structures and Algorithms (DSA) and aptitude. Despite holding degrees, only 3.84% of graduates have the technical skills required for software roles, while over 60% fail campus recruitment aptitude tests. Since 94% of hiring managers prioritize DSA proficiency in technical interviews, graduates without these skills face limited job opportunities, often settling for low-paying, non-technical roles or experiencing slow career growth.
+> **Empowering Coders with AI** - An intelligent Chrome extension and platform designed to enhance coding skills through real-time guidance, performance tracking, and gamification.
 
-# Our Solution
-To address this issue, we offer Trixie, an interactive learning solution designed to enhance DSA and aptitude skills. Trixie functions as a Chrome extension chatbot, providing real-time, interactive learning support. Additionally, our website tracks students' problem-solving progress, highlighting their strengths and weaknesses. It offers real-time data insights and generates a comprehensive academic review, helping students identify areas for improvement and boosting their overall employability.
+## 🎯 Problem Statement
 
-## 🚀 Features Implemented
+India produces over **1.5 million engineering graduates** annually, but **75-80%** struggle to find IT jobs due to skill gaps:
 
-- **Landing Page**:
-  - Install Chrome Extension button
-  - Login button redirects to the dashboard
-  - Admin Login button (to be implemented later)
+- Only **3.84%** have required technical skills for software roles
+- Over **60%** fail campus recruitment aptitude tests  
+- **94%** of hiring managers prioritize DSA proficiency
+- Graduates often settle for low-paying, non-technical roles
 
-- **Dashboard**:
-  - Displays a **Pie Chart** representing the number of questions solved and their difficulty levels (Easy, Medium, Hard)
-  - Provides personalized insights into your **Strengths and Weaknesses** in various skill areas
+**Trixie** addresses this critical skills gap through interactive AI-powered learning.
 
-- **Data Management**:
-  - Data is stored and managed using **Supabase**
-  - Real-time coding data is extracted from coding platforms like **LeetCode**
+## ✨ Key Features
 
-- **AI Chatbot**:
-  - Available as a **Chrome Extension** that works in the background while you're on coding platforms
-  - Trained to analyze problem complexity and generate helpful responses
-  - Provides actionable insights, explanations, and coding tips
-  - Enables interactive learning with follow-up questions based on your progress
+### 🔧 Chrome Extension Chatbot
+- **Real-time assistance** while coding on platforms like LeetCode
+- **Context-aware AI** powered by Google's Gemini 2.0 Flash model
+- **Session-based conversations** that maintain problem context
+- **Guided learning approach** - provides hints, not direct solutions
+- **Professional tone** with structured, concise responses
 
-- **Admin Dashboard (Upcoming)**:
-  - Admin login for mentors and teachers
-  - Track student progress and analyze their strengths and weaknesses
-  - Generate reports based on real-time data
+### 📊 Dashboard System
+- **Visual progress tracking** with pie charts showing solved problems by difficulty
+- **Personalized insights** into coding strengths and weaknesses
+- **Real-time data integration** from coding platforms
+- **Performance analytics** to identify improvement areas
 
-## 🧑‍💻 How It Works
+### 🎓 Admin Dashboard (Upcoming)
+- **Mentor/Teacher portal** for tracking student progress
+- **Comprehensive reporting** based on real-time coding data
+- **Weakness analysis** and improvement recommendations
 
-1. **Install the Chrome Extension**: Access it directly from the landing page.
-2. **Log In**: Choose to log in as a user or an admin (admin login functionality will be implemented later).
-3. **Dashboard Overview**: Visualize coding progress through insightful charts and data fetched from Supabase.
-4. **Engage with the Chatbot**: Converse with the AI chatbot while solving problems on platforms like LeetCode.
-5. **Track Progress**: Analyze strengths and weaknesses and receive AI-generated suggestions for improvement.
+## 🏗️ Architecture
 
-## 📦 Tech Stack
+### Tech Stack
+```
+Frontend:     React.js + Tailwind CSS
+Backend:      Node.js + Express.js
+Database:     Supabase
+AI Engine:    Google Gemini 2.0 Flash API
+Visualization: Recharts.js
+Extension:    Chrome Extension APIs (Manifest V3)
+```
 
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: Supabase
-- **AI**: Custom-trained AI using Gemini API
-- **Charting**: Recharts.js
-- **Browser Extension**: Chrome Extension APIs
+### Project Structure
+```
+trixie/
+├── extension/                 # Chrome Extension
+│   ├── manifest.json         # Extension configuration
+│   ├── background.js         # Service worker
+│   ├── content-scripts/      # Content injection scripts
+│   └── extension-ui/         # Popup interface
+├── backend-chatbot/          # AI Backend Server
+│   ├── server.js            # Express server with Gemini integration
+│   ├── chatbot.js           # AI response handler
+│   └── package.json         # Backend dependencies
+├── frontend/                 # React Dashboard
+│   └── src/                 # React components
+└── README.md
+```
 
-## 🛠️ Installation Guide
+## 🚀 Installation & Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/trixie.git
-   ```
-2. Navigate to the frontend:
-   ```bash
-   cd frontend
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Run the application:
-   ```bash
-   npm start
-   ```
+### Prerequisites
+- Node.js (v14 or higher)
+- Chrome Browser
+- Google Gemini API Key
 
-5. Navigate to the chatbot:
-   ```bash
-   cd ..
-   cd trixie-extension/backend-chatbot
-   node server.js
-   ```
-   
-5. For the Chrome extension:
-   - Navigate to `chrome://extensions/`
-   - Enable **Developer Mode**
-   - Load the unpacked extension from the `extension` folder.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Lionel-Logan/Trixie---AI-Chatbot.git
+cd Trixie---AI-Chatbot
+```
 
-## 📧 Contact
+### 2. Backend Setup
+```bash
+cd backend-chatbot
+npm install
+```
 
-For further queries, feel free to reach out.
+Create `.env` file:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
----
+Start the backend server:
+```bash
+node server.js
+```
+Server will run on `http://localhost:5000`
 
-**Trixie - Empowering Coders with AI.**
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### 4. Chrome Extension Installation
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable **Developer Mode** (top-right toggle)
+3. Click **Load unpacked** and select the `extension` folder
+4. The Trixie extension icon should appear in your toolbar
+
+## 🎮 How to Use
+
+### Getting Started
+1. **Visit LeetCode**: Navigate to any problem on LeetCode
+2. **Activate Trixie**: Click the extension icon or it will auto-activate
+3. **Start Chatting**: Begin conversation about the current problem
+4. **Get Guidance**: Receive hints, explanations, and problem-solving strategies
+
+### Sample Interaction
+```
+User: "I'm stuck on this two-sum problem"
+
+Trixie: "Let's break this down! What approach are you considering? 
+Are you thinking about using a brute force method or something more 
+efficient? What's your initial strategy for finding two numbers that 
+sum to the target?"
+```
+
+## 🔧 Core Components
+
+### Chrome Extension (`manifest.json`)
+- **Manifest V3** compliance for modern Chrome extension standards
+- **Content Scripts** inject on LeetCode problem pages
+- **Background Service Worker** manages extension lifecycle
+- **Popup Interface** for direct user interaction
+
+### AI Backend (`server.js`)
+- **Google Gemini Integration** with custom pre-prompt engineering
+- **Session Management** maintains conversation context per user
+- **Problem-Aware Responses** adapts to current LeetCode problem
+- **CORS Enabled** for cross-origin requests from extension
+
+### Key Features Implementation
+
+#### Session-Based Conversations
+```javascript
+// Maintains context across messages
+const userSessions = {};
+
+// Each user gets personalized session tracking
+if (!userSessions[userId]) {
+    userSessions[userId] = {
+        hasPrePromptExecuted: false,
+        chatHistory: [],
+        problemTitle: problemTitle || ""
+    };
+}
+```
+
+#### AI Prompt Engineering
+- **Pre-prompt** establishes Trixie's personality and behavior
+- **Context injection** includes problem title and chat history
+- **Response guidelines** ensure educational, not solution-focused answers
+
+## 📊 API Endpoints
+
+### POST `/chatbot`
+**Purpose**: Main chat interface with AI
+```json
+{
+  "message": "User's question",
+  "problemTitle": "Current LeetCode problem",
+  "userId": "unique_user_identifier"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "Trixie's AI-generated response"
+}
+```
+
+### POST `/clearChat`
+**Purpose**: Reset user's chat session
+```json
+{
+  "userId": "unique_user_identifier"
+}
+```
+
+## 📝 Code Examples
+
+### Backend Dependencies (package.json)
+```json
+{
+    "name": "trixie-chatbot",
+    "version": "1.0.0",
+    "description": "Chatbot backend for Trixie extension",
+    "main": "server.js",
+    "dependencies": {
+        "@google/generative-ai": "^0.24.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.18.2"
+    }
+}
+```
+
+### Chrome Extension Manifest
+```json
+{
+  "manifest_version": 3,
+  "name": "Trixie Chatbot",
+  "version": "1.0",
+  "description": "A chatbot assistant for coding platforms",
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "host_permissions": ["http://localhost:5000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://leetcode.com/problems/*"],
+      "js": ["content-scripts/content.js"]
+    }
+  ]
+}
+```
+
+## 🔮 Future Enhancements
+
+### Phase 1 (Current)
+- ✅ Chrome Extension with LeetCode integration
+- ✅ AI-powered chat assistance
+- ✅ Session-based conversations
+
+### Phase 2 (In Development)
+- 🔄 React Dashboard with progress visualization
+- 🔄 Supabase integration for data persistence
+- 🔄 Multi-platform support (HackerRank, CodeChef)
+
+### Phase 3 (Planned)
+- 📋 Admin dashboard for educators
+- 📈 Advanced analytics and reporting
+- 🎯 Personalized learning paths
+- 🏆 Gamification elements
+
+## 🛠️ Development Guidelines
+
+### Code Style
+- **Professional tone**: No emojis in AI responses
+- **Concise responses**: 100-word limit for AI
+- **Educational focus**: Hints over direct solutions
+- **Error handling**: Comprehensive try-catch blocks
+
+### AI Behavior Guidelines
+- Never provide complete code solutions
+- Ask engaging follow-up questions
+- Guide through problem-solving thought process
+- Maintain conversation flow with critical thinking prompts
+
+## 📸 Screenshots
+
+### Extension in Action
+![Trixie Extension](https://via.placeholder.com/800x400?text=Trixie+Extension+Screenshot)
+
+### Dashboard Overview
+![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
+
+## 🏆 Acknowledgments
+
+- **TinkHack 2.0** for providing the platform
+- **Google Gemini** for AI capabilities
+- **LeetCode** for the coding platform integration
+- **Open Source Community** for inspiration and support
+
+<div align="center">
+
+**Trixie - Empowering Coders with AI** 🚀
+
+*Making competitive programming accessible, engaging, and effective for every aspiring developer.*
+
+[![GitHub stars](https://img.shields.io/github/stars/Lionel-Logan/Trixie---AI-Chatbot?style=social)](https://github.com/Lionel-Logan/Trixie---AI-Chatbot/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Lionel-Logan/Trixie---AI-Chatbot?style=social)](https://github.com/Lionel-Logan/Trixie---AI-Chatbot/network/members)
+
+</div>
